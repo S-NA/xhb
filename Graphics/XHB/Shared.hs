@@ -305,23 +305,6 @@ instance Deserialize CChar where
 -- All of this relies on being able to roundtrip:
 -- (IntN -> WordN) and (WordN -> IntN) using 'fromIntegral'
 
-putInt8 :: Int8 -> Put
-putInt8 = putWord8 . fromIntegral
-
-getInt8 :: Get Int8
-getInt8 = liftM fromIntegral getWord8
-
-putInt16host :: Int16 -> Put
-putInt16host = putWord16host . fromIntegral
-
-getInt16host :: Get Int16
-getInt16host = liftM fromIntegral getWord16host
-
-putInt32host :: Int32 -> Put
-putInt32host = putWord32host . fromIntegral
-
-getInt32host :: Get Int32
-getInt32host = liftM fromIntegral getWord32host
 
 -- Fun stuff
 
